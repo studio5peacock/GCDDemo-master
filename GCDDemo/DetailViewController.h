@@ -1,0 +1,25 @@
+//
+//  DetailViewController.h
+//  GCDDemo
+//
+
+
+#import <UIKit/UIKit.h>
+#include "GCDMaster.h"
+
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate, GCDMasterDelegate>
+
+@property (nonatomic, retain) GCDMaster *gcdMaster;
+@property (strong, nonatomic) id detailItem;
+@property (retain, nonatomic) IBOutlet UILabel *DemoLabel;
+@property (retain, nonatomic) IBOutlet UITextView *logLabel;
+@property (retain, nonatomic) IBOutlet UILabel *explainLabel;
+
+- (IBAction)runSerialQueue;
+- (IBAction)runConcurrentQueue;
+- (IBAction)runBlockDemo:(id)sender;
+
+@property (retain, nonatomic) IBOutletCollection(UILabel) NSArray *blockLabels;
+@property (retain, nonatomic) IBOutletCollection(UIButton) NSArray *runButtons;
+
+@end
